@@ -1,0 +1,32 @@
+# Override the default subnet ip address
+# subnet="192.168.178.0/24"
+
+# Override the default subnet avalibity zone region
+# subnet_az="eu-west-2a"
+
+# Override the default region
+# region="eu-west"
+
+# Override the aws profile to use
+# aws_profile="default"
+
+# Override the aws profile credentials location
+# aws_profile_credentials="~/.aws/credentials"
+
+# Override namespace, this helps identify proxy server resources
+# namespace="dsproxy"
+
+# Override path to wireguard conf
+# wireguard_conf_path = "./files/nkelt.conf"
+
+# Override path to sniproxy
+# sniproxy_conf_path = "./files/sniproxy.conf"
+
+# Set ssh keys to allow access to the server
+ssh_keys=[
+  # one key per row, seperated by comma
+]
+
+# EIP id for permanant ip to use with domain
+# this should look like eipalloc-1234....
+eip_id = ""

@@ -1,0 +1,13 @@
+[Unit]
+Description=sniproxy
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=daemon
+ExecStart=/usr/sbin/sniproxy -f -c /etc/sniproxy.conf
+
+
+[Install]
+WantedBy=multi-user.target

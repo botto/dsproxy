@@ -1,0 +1,35 @@
+user daemon
+
+pidfile /var/run/sniproxy.pid
+
+error_log {
+  # Alternatively we could log to file
+  syslog daemon
+
+  # Control the verbosity of the log
+  priority notice
+}
+
+listen 80 {
+  proto http
+  table web_hosts
+  # The fallback is used when it can't find a matching host in the table
+  # fallback 127.0.0.1:80
+}
+
+listen 443 {
+  protocol tls
+  table websecure_hosts
+  # The fallback is used when it can't find a matching host in the table
+  # fallback 127.0.0.1:80
+}
+
+table websecure_hosts {
+  # enter non tls hosts to route traffic for
+  # example.com 172.27.27.1:80
+}
+
+table web_hosts {
+  # enter tls hosts to route traffic for
+  # example.com 172.27.27.1:443
+}
